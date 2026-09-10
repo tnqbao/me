@@ -1030,6 +1030,313 @@ button {
   margin: 0;
 }
 
+/* Subpages */
+.subpage-nav .wordmark {
+  position: absolute;
+  left: 50%;
+  margin: 0;
+  transform: translateX(-50%);
+}
+
+.subpage-back {
+  margin-right: auto;
+  min-height: 2.75rem;
+  padding-inline: 0.55rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--secondary-foreground);
+  font-size: 0.84rem;
+  font-weight: 620;
+}
+
+.project-hero {
+  padding-top: 12rem;
+  padding-bottom: 6rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(15rem, 0.4fr);
+  align-items: end;
+  gap: 5rem;
+}
+
+.project-hero h1 {
+  margin: 0;
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  line-height: 1;
+  letter-spacing: -0.06em;
+}
+
+.project-subtitle {
+  margin: 1rem 0 0;
+  color: var(--steel);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.9rem;
+}
+
+.project-lede {
+  max-width: 43rem;
+  margin: 1.75rem 0 0;
+  color: var(--secondary-foreground);
+  font-size: 1.08rem;
+}
+
+.project-hero-actions {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.project-stack {
+  margin: 0;
+  padding-left: 1.5rem;
+  color: var(--steel);
+  font-size: 0.84rem;
+  border-left: 1px solid var(--outline);
+}
+
+.project-overview {
+  background: var(--surface);
+}
+
+.project-overview-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.72fr) minmax(28rem, 1.28fr);
+  align-items: center;
+  gap: 5rem;
+}
+
+.technical-layout {
+  display: grid;
+  grid-template-columns: minmax(15rem, 0.55fr) minmax(0, 1.45fr);
+  gap: 6rem;
+}
+
+.technical-heading {
+  position: sticky;
+  top: 8rem;
+  align-self: start;
+}
+
+.technical-groups {
+  border-top: 1px solid var(--outline-subtle);
+}
+
+.technical-group {
+  padding: 2rem 0;
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  gap: 1rem;
+  border-bottom: 1px solid var(--outline-subtle);
+}
+
+.technical-group > span {
+  color: var(--steel-muted);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.72rem;
+}
+
+.technical-group h3 {
+  margin: 0;
+  font-size: 1.18rem;
+}
+
+.technical-group p {
+  margin: 0.5rem 0 0;
+  color: var(--secondary-foreground);
+  font-size: 0.9rem;
+}
+
+.technical-group ul {
+  margin: 1rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.2rem;
+  color: var(--steel);
+  font-size: 0.8rem;
+  list-style: none;
+}
+
+.technical-group li::before {
+  content: "•";
+  margin-right: 0.45rem;
+  color: var(--outline);
+}
+
+.project-repositories {
+  background: var(--surface);
+}
+
+.repository-list {
+  margin-top: 2.5rem;
+  border-top: 1px solid var(--outline-subtle);
+}
+
+.repository-list > a {
+  min-height: 4.5rem;
+  padding: 1rem 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--secondary-foreground);
+  border-bottom: 1px solid var(--outline-subtle);
+  transition: color 160ms var(--ease-material), padding 200ms var(--ease-material);
+}
+
+.repository-list > a:hover {
+  padding-inline: 1rem;
+  color: var(--primary);
+}
+
+.repository-list > a span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Resume */
+.resume-page {
+  max-width: 58rem;
+  padding-top: 10rem;
+  padding-bottom: 6rem;
+}
+
+.resume-header {
+  padding-bottom: 2.5rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 3rem;
+  border-bottom: 1px solid var(--outline);
+}
+
+.resume-header h1 {
+  margin: 0;
+  font-size: clamp(2.4rem, 6vw, 3.6rem);
+  line-height: 1.05;
+  letter-spacing: -0.05em;
+}
+
+.resume-header p {
+  margin: 0.8rem 0 0;
+  font-size: 1.15rem;
+  font-weight: 650;
+}
+
+.resume-header span {
+  color: var(--steel);
+  font-size: 0.88rem;
+}
+
+.resume-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.resume-contact > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--secondary-foreground);
+  font-size: 0.8rem;
+}
+
+.print-button {
+  margin-top: 0.75rem;
+}
+
+.resume-section {
+  padding: 2.6rem 0;
+  display: grid;
+  grid-template-columns: 10rem 1fr;
+  gap: 2.5rem;
+  border-bottom: 1px solid var(--outline-subtle);
+}
+
+.resume-section > h2 {
+  margin: 0;
+  color: var(--steel);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.resume-section > p,
+.resume-section > ul {
+  margin: 0;
+  color: var(--secondary-foreground);
+  font-size: 0.9rem;
+}
+
+.resume-experience-list article + article {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--outline-subtle);
+}
+
+.resume-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.resume-row h3,
+.resume-row p {
+  margin: 0;
+}
+
+.resume-row h3 {
+  font-size: 1.05rem;
+}
+
+.resume-row p,
+.resume-row time,
+.resume-row > a {
+  color: var(--secondary-foreground);
+  font-size: 0.82rem;
+}
+
+.resume-row time {
+  white-space: nowrap;
+}
+
+.resume-tech {
+  margin: 0.7rem 0 !important;
+  color: var(--steel) !important;
+  font-size: 0.76rem !important;
+}
+
+.resume-experience-list ul,
+.resume-section > ul {
+  margin: 0.75rem 0 0;
+  padding-left: 1.15rem;
+  color: var(--secondary-foreground);
+  font-size: 0.83rem;
+}
+
+.resume-skills dl {
+  margin: 0;
+}
+
+.resume-skills dl > div + div {
+  margin-top: 0.9rem;
+}
+
+.resume-skills dt {
+  font-size: 0.82rem;
+  font-weight: 680;
+}
+
+.resume-skills dd {
+  margin: 0.2rem 0 0;
+  color: var(--secondary-foreground);
+  font-size: 0.8rem;
+}
+
 @media (max-width: 720px) {
   html {
     scroll-padding-top: 5.5rem;
@@ -1243,6 +1550,104 @@ button {
     align-items: flex-start;
     flex-direction: column;
     gap: 1rem;
+  }
+
+  .project-hero,
+  .project-overview-layout,
+  .technical-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .project-hero {
+    padding-top: 9rem;
+    padding-bottom: 4.5rem;
+    gap: 2.5rem;
+  }
+
+  .project-hero h1 {
+    font-size: clamp(3rem, 15vw, 4.5rem);
+  }
+
+  .project-stack {
+    padding: 1rem 0 0;
+    border-top: 1px solid var(--outline);
+    border-left: 0;
+  }
+
+  .project-overview-layout,
+  .technical-layout {
+    gap: 3rem;
+  }
+
+  .technical-heading {
+    position: static;
+  }
+
+  .resume-page {
+    padding-top: 8rem;
+  }
+
+  .resume-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .resume-section {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .resume-row {
+    display: block;
+  }
+
+  .resume-row time,
+  .resume-row > a {
+    display: block;
+    margin-top: 0.35rem;
+  }
+}
+
+@media print {
+  :root,
+  :root.dark {
+    --background: #ffffff;
+    --foreground: #111318;
+    --secondary-foreground: #41444a;
+    --muted-foreground: #62666d;
+    --steel: #3f586a;
+    --outline: #9ca0a6;
+    --outline-subtle: #d8dadd;
+  }
+
+  .resume-nav,
+  .print-button {
+    display: none !important;
+  }
+
+  .resume-page {
+    width: 100%;
+    max-width: none;
+    padding: 0;
+  }
+
+  .resume-header h1 {
+    font-size: 2.3rem;
+  }
+
+  .resume-header,
+  .resume-section {
+    break-inside: avoid;
+  }
+
+  .resume-section {
+    padding-block: 1.4rem;
+  }
+
+  @page {
+    size: A4;
+    margin: 14mm;
   }
 }
 
