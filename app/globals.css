@@ -1,0 +1,250 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f6f4ef;
+  --surface: #fbfaf7;
+  --surface-container: #eeeae2;
+  --surface-high: #e4e0d7;
+  --foreground: #191b1f;
+  --secondary-foreground: #5d6168;
+  --muted-foreground: #7a7d82;
+  --primary: #8a651d;
+  --primary-hover: #705014;
+  --primary-container: #f2e4bc;
+  --primary-container-subtle: #f8f0da;
+  --on-primary: #ffffff;
+  --steel: #536878;
+  --steel-muted: #738390;
+  --outline: #c8c3b9;
+  --outline-subtle: #dedad2;
+  --success: #2e7048;
+  --error: #ba1a1a;
+  --nav-bg: rgba(251, 250, 247, 0.86);
+  --selection: rgba(138, 101, 29, 0.24);
+  --shadow: 0 10px 32px rgba(46, 42, 34, 0.07);
+  --ease-material: cubic-bezier(0.2, 0, 0, 1);
+}
+
+:root.dark {
+  --background: #0e1116;
+  --surface: #151a21;
+  --surface-container: #1d242d;
+  --surface-high: #252c35;
+  --foreground: #f3f5f7;
+  --secondary-foreground: #aab2bd;
+  --muted-foreground: #7e8793;
+  --primary: #e1bb67;
+  --primary-hover: #edcb82;
+  --primary-container: #443719;
+  --primary-container-subtle: #282216;
+  --on-primary: #332500;
+  --steel: #91a4b5;
+  --steel-muted: #66798a;
+  --outline: #39414b;
+  --outline-subtle: #282f38;
+  --success: #75c995;
+  --error: #ffb4ab;
+  --nav-bg: rgba(21, 26, 33, 0.86);
+  --selection: rgba(225, 187, 103, 0.22);
+  --shadow: 0 12px 36px rgba(0, 0, 0, 0.16);
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-container: var(--surface-container);
+  --color-surface-high: var(--surface-high);
+  --color-foreground: var(--foreground);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-container: var(--primary-container);
+  --color-steel: var(--steel);
+  --color-outline: var(--outline);
+  --color-outline-subtle: var(--outline-subtle);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 7rem;
+  background: var(--background);
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 240ms var(--ease-material), color 240ms var(--ease-material);
+}
+
+::selection {
+  background: var(--selection);
+  color: var(--foreground);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+
+.container {
+  width: min(100% - 2rem, 72rem);
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: 6.5rem;
+}
+
+.section + .section {
+  border-top: 1px solid var(--outline-subtle);
+}
+
+.section-kicker {
+  margin: 0 0 0.65rem;
+  color: var(--steel);
+  font-size: 0.78rem;
+  font-weight: 650;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.section-heading {
+  margin: 0;
+  max-width: 34rem;
+  font-size: clamp(1.8rem, 4vw, 2.25rem);
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+}
+
+.section-intro {
+  margin: 1rem 0 0;
+  max-width: 42rem;
+  color: var(--secondary-foreground);
+}
+
+.button {
+  min-height: 2.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.68rem 1.15rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 650;
+  line-height: 1;
+  transition: background-color 180ms var(--ease-material), border-color 180ms var(--ease-material), color 180ms var(--ease-material), transform 180ms var(--ease-material);
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button-primary {
+  background: var(--primary);
+  color: var(--on-primary);
+}
+
+.button-primary:hover {
+  background: var(--primary-hover);
+}
+
+.button-tonal {
+  background: var(--surface-container);
+  color: var(--foreground);
+}
+
+.button-tonal:hover {
+  background: var(--surface-high);
+}
+
+.button-outline {
+  border-color: var(--outline);
+  color: var(--secondary-foreground);
+}
+
+.button-outline:hover {
+  border-color: var(--steel-muted);
+  color: var(--foreground);
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--steel);
+  font-weight: 600;
+  transition: color 160ms var(--ease-material);
+}
+
+.text-link:hover {
+  color: var(--primary);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 720px) {
+  html {
+    scroll-padding-top: 5.5rem;
+  }
+
+  .container {
+    width: min(100% - 1.25rem, 72rem);
+  }
+
+  .section {
+    padding-block: 4.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
