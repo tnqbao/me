@@ -9,7 +9,7 @@ const geist = Geist({
   display: "swap",
 });
 
-const title = "Tran Nguyen Quoc Bao — Software Engineer";
+const title = "Tran Nguyen Quoc Bao — Software Engineer · DevOps Engineer";
 const description =
   "Software Engineer focused on backend systems, Kubernetes, DevOps, GitOps and cloud infrastructure.";
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://tnqbao.github.io/me";
@@ -39,11 +39,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  colorScheme: "dark light",
-  themeColor: [
-    { media: "(prefers-color-scheme: dark)", color: "#0E1116" },
-    { media: "(prefers-color-scheme: light)", color: "#F6F4EF" },
-  ],
+  colorScheme: "dark",
+  themeColor: "#030406",
 };
 
 const themeScript = `
