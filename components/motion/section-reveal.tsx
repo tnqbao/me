@@ -6,7 +6,21 @@ import { useEffect } from "react";
 export function SectionReveal() {
   useEffect(() => {
     const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (preference.matches || !("IntersectionObserver" in window)) return;
+    const nav = document.querySelector(".p-nav");
+    let isScrolled = false;
+    const updateNav = () => {
+      const next = window.scrollY > 16;
+      if (next !== isScrolled) {
+        nav?.classList.toggle("is-scrolled", next);
+        isScrolled = next;
+      }
+    };
+    updateNav();
+    window.addEventListener("scroll", updateNav, { passive: true });
+
+    if (preference.matches || !("IntersectionObserver" in window)) {
+      return () => window.removeEventListener("scroll", updateNav);
+    }
 
     const animations = new Map<Element, Animation>();
     const observer = new IntersectionObserver(
@@ -56,6 +70,7 @@ export function SectionReveal() {
     document.addEventListener("focusin", onFocus);
     return () => {
       cancelAnimations();
+      window.removeEventListener("scroll", updateNav);
       preference.removeEventListener("change", onPreferenceChange);
       document.removeEventListener("focusin", onFocus);
     };
